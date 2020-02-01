@@ -25,6 +25,7 @@ if ("TITLE" in os.environ and os.environ['TITLE']):
 else:
     title = app.config['TITLE']
 
+# Push test
 # Redis configurations
 redis_server = os.environ['REDIS']
 
