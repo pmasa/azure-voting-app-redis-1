@@ -33,8 +33,10 @@ pipeline {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
+            //dockerImage.push()
             //dockerImage.push('latest')
+             sh "docker push $registry:$BUILD_NUMBER"
+             echo "Image push complete"
           }
         }
       }
