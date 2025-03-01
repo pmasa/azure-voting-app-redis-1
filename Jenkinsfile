@@ -19,7 +19,7 @@ pipeline {
       steps{
         script {
           sh '''
-          cd ./azure-vote"
+          cd /azure-vote"
           docker build -t $registry:$BUILD_NUMBER"
           '''
           echo "Image build complete"
