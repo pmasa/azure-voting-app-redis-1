@@ -18,7 +18,10 @@ pipeline {
     stage('Building Docker image ') {
       steps{
         script {
-          dockerImage = docker.build ./azure-vote registry + ":$BUILD_NUMBER"
+          sh '''
+            cd ./azure-vote
+          '''
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
           
         }
       }
