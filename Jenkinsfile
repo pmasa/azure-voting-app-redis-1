@@ -46,16 +46,16 @@ pipeline {
     //            git config user.email ${GIT_USER_EMAIL}
     //            git config user.name devops
     //
-     //           cat deployment.yaml
-     //           sed -i "s+pedromasa/webapp.*+pedromasa/webapp:${BUILD_NUMBER}+g" deployment.yaml
-     //           cat deployment.yaml
-     //           
-      //          git add .
-      //          git commit -m "push manifest file"
-      //          git push https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main -f
-      //      '''
-      //  }
-      //}
+    //           cat deployment.yaml
+    //           sed -i "s+pedromasa/webapp.*+pedromasa/webapp:${BUILD_NUMBER}+g" deployment.yaml
+    //           cat deployment.yaml
+    //           
+    //           git add .
+    //           git commit -m "push manifest file"
+    //           git push https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main -f
+    //      '''
+    //  }
+    //}
     //}
   
   }    
