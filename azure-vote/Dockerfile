@@ -17,7 +17,7 @@ FROM balenalib/raspberry-pi
 # Separate nginx user not required, as www-data account is already being used
 RUN apt-get update && apt-get install -y nginx && apt-get -y clean
 
-RUN pip install redis
+RUN apt-get install redis
 ADD /azure-vote /app
 
 # Copy start script
