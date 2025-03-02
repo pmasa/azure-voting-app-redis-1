@@ -3,7 +3,7 @@ pipeline {
     registry = "pedromasa/azure-vote-front"
     registryCredential = 'dockerhub'
     dockerImage = ''
-    GIT_REPO_NAME = "azure-voting-app-redis-1"
+    GIT_REPO_NAME = "voting-app-redis-demo"
     GIT_USER_NAME = "pmasa"
     GIT_USER_EMAIL = "devopsmas@gmail.com"
     GIT_TOKEN = credentials('GithubToken')
