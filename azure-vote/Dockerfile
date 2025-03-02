@@ -27,8 +27,8 @@ ADD /azure-vote /app
 ## IMAGE CONFIGURATION
 
 # Expose HTTP & HTTPS
-EXPOSE 8888
+#EXPOSE 8888
 
 # Update (optional) & start nginx
 #CMD ["bash", "/opt/start-nginx.sh"]
-CMD ["nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
