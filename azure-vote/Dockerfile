@@ -9,7 +9,7 @@ FROM cseelye/rpi-nginx-uwsgi-flask
 #RUN pip install redis
 #FROM hypriot/rpi-redis
 
-FROM    tiangolo/uwsgi-nginx-flask:python3.6
+#FROM    tiangolo/uwsgi-nginx-flask:python3.6
 
 COPY sshd_config /etc/ssh/
 COPY app_init.supervisord.conf /etc/supervisor/conf.d
