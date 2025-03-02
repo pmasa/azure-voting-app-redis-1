@@ -4,7 +4,7 @@
 
 # -------- new ---------
 
-FROM cseelye/rpi-nginx-uwsgi-flask
+#FROM cseelye/rpi-nginx-uwsgi-flask
 
 #RUN pip install redis
 FROM hypriot/rpi-redis
