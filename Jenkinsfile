@@ -54,11 +54,11 @@ pipeline {
                 git config user.name devops
     
                cat deployment.yaml
-               sed -i "s+pedromasa/webapp.*+pedromasa/webapp:${BUILD_NUMBER}+g" deployment.yaml
+               sed -i "s+pedromasa/azure-vote-front.*+pedromasa/azure-vote-front:${BUILD_NUMBER}+g" deployment.yaml
                cat deployment.yaml
                
                git add .
-               git commit -m "push manifest file"
+               git commit -m "commit manifest file"
                git push https://${GIT_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main -f
           '''
       }
