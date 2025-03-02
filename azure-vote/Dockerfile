@@ -11,7 +11,7 @@ FROM cseelye/rpi-nginx-uwsgi-flask
 
 #FROM    tiangolo/uwsgi-nginx-flask:python3.6
 
-RUN  pip install redis==3.5.3
+RUN  pip install redis-server
  
 ADD /azure-vote /app
 
