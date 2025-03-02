@@ -3,6 +3,7 @@
 #ADD /azure-vote /app
 
 # -------- new ---------
+FROM balenalib/raspberry-pi
 
 FROM cseelye/rpi-nginx-uwsgi-flask
 
