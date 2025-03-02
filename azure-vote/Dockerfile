@@ -6,5 +6,5 @@
 
 FROM cseelye/rpi-nginx-uwsgi-flask
 
-RUN pip install redis
+#RUN pip install redis
 ADD /azure-vote /app
