@@ -4,31 +4,27 @@
 
 # -------- new ---------
 
-# Set the base image
-FROM balenalib/raspberry-pi
+FROM cseelye/rpi-nginx-base
+MAINTAINER Carl Seelye <cseelye@gmail.com>
 
-# File Author / Maintainer
-#MAINTAINER Pedro 
+RUN [ "cross-build-start" ]
+RUN apt-get update && \
+    apt-get --assume-yes upgrade && \
+    apt-get --assume-yes install curl python python-dev build-essential&& \
+    curl https://bootstrap.pypa.io/get-pip.py | python && \
+    pip install uwsgi && \
+    pip install flask_restplus Flask-BasicAuth requests && \
+    mkdir --parents /app && \
+    apt-get autoremove && \
+    apt-get clean && \
+    rm --force --recursive /var/lib/apt/lists/* /tmp/* /var/tmp/*
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY uwsgi-common.ini /etc/uwsgi/uwsgi-common.ini
+COPY app.conf /etc/nginx/conf.d/app.conf
+RUN [ "cross-build-end" ]
 
+WORKDIR /app
+CMD ["/usr/bin/supervisord"]
 
-## BEGIN INSTALLATION
-
-# Install nginx
-# Separate nginx user not required, as www-data account is already being used
-RUN apt-get update && apt-get install -y nginx && apt-get -y clean
-
-RUN apt-get install redis
+RUN pip install redis
 ADD /azure-vote /app
-
-# Copy start script
-#COPY start-nginx.sh /opt/
-
-
-## IMAGE CONFIGURATION
-
-# Expose HTTP & HTTPS
-#EXPOSE 8088
-
-# Update (optional) & start nginx
-#CMD ["bash", "/opt/start-nginx.sh"]
-CMD ["nginx", "-g", "daemon off;"]
