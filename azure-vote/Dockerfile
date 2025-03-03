@@ -12,7 +12,7 @@ WORKDIR /app
 
 # Install our requirements.txt
 ADD requirements.txt /app/requirements.txt
-RUN pip install -U pip --index-url=https://pypi.python.org/simple/
+RUN pip install -U pip --index-url=https://pypi.python.org/simple
 
 RUN pip install -r requirements.txt
 
