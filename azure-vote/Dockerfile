@@ -5,10 +5,10 @@
 # -------- new ---------
 # Using official python runtime base image
 #FROM python:2.7
-FROM hypriot/rpi-python:2.7
+#FROM hypriot/rpi-python:2.7
 
 # Pull base image
-#FROM resin/rpi-raspbian:wheezy
+FROM resin/rpi-raspbian:wheezy
 MAINTAINER Dieter Reuter <dieter@hypriot.com>
 
 # Install dependencies
