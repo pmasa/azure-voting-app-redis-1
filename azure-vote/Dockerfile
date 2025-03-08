@@ -24,9 +24,14 @@ MAINTAINER Dieter Reuter <dieter@hypriot.com>
 WORKDIR /app
 
 # Install our requirements.txt
-ADD requirements.txt /app/requirements.txt
+#ADD requirements.txt /app/requirements.txt
+RUN sudo apt-get install python-pip
+RUN sudo pip install flask
+RUN sudo pip install flask-socketio
+RUN pip install redis
 
-RUN pip install -r requirements.txt
+
+#RUN pip install -r requirements.txt
 
 # Copy our code from the current folder to /app inside the container
 #ADD . /app
