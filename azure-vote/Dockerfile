@@ -5,20 +5,20 @@
 # -------- new ---------
 # Using official python runtime base image
 #FROM python:2.7
-#FROM hypriot/rpi-python:2.7
+FROM hypriot/rpi-python:2.7
 
 # Pull base image
-FROM resin/rpi-raspbian:wheezy
+#FROM resin/rpi-raspbian:wheezy
 MAINTAINER Dieter Reuter <dieter@hypriot.com>
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
-    python \
-    python-dev \
-    python-pip \
-    python-virtualenv \
-    --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y \
+#    python \
+#    python-dev \
+#    python-pip \
+#    python-virtualenv \
+#    --no-install-recommends && \
+#    rm -rf /var/lib/apt/lists/*
 
 # Set the application directory
 WORKDIR /app
