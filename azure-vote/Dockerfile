@@ -1,6 +1,7 @@
 #FROM tiangolo/uwsgi-nginx-flask:python3.6
-#RUN pip install redis
-#ADD /azure-vote /app
+FROM crawforc3/raspberrypi-uwsgi-nginx-flask
+RUN pip install redis
+ADD /azure-vote /app
 
 # -------- new ---------
 # Using official python runtime base image
@@ -8,27 +9,27 @@
 #FROM hypriot/rpi-python:2.7
 
 # Pull base image
-FROM resin/rpi-raspbian:wheezy
-MAINTAINER Dieter Reuter <dieter@hypriot.com>
+#FROM resin/rpi-raspbian:wheezy
+#MAINTAINER Dieter Reuter <dieter@hypriot.com>
 
 # Install dependencies
-RUN apt-get update && apt-get install -y \
-    python \
-    python-dev \
-    python-pip \
-    python-virtualenv \
-    --no-install-recommends && \
-    rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y \
+#    python \
+#    python-dev \
+#    python-pip \
+#    python-virtualenv \
+#    --no-install-recommends && \
+#    rm -rf /var/lib/apt/lists/*
 
 # Set the application directory
-WORKDIR /app
+#WORKDIR /app
 
 # Install our requirements.txt
 #ADD requirements.txt /app/requirements.txt
 #RUN sudo apt-get install python-pip
 
-RUN sudo pip install redis
-RUN sudo pip install flask
+#RUN sudo pip install redis
+#RUN sudo pip install flask
 
 #RUN pip install -r requirements.txt
 
