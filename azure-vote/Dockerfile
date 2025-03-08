@@ -25,8 +25,8 @@ WORKDIR /app
 
 # Install our requirements.txt
 #ADD requirements.txt /app/requirements.txt
-RUN sudo apt-get install python-pip
-RUN pip install --index-url=https://pypi.python.org/simple/ nose
+#RUN sudo apt-get install python-pip
+RUN sudo apt install python-pip -y
 RUN pip install redis
 RUN sudo pip install flask
 RUN sudo pip install flask-socketio
