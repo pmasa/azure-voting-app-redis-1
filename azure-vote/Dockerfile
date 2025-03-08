@@ -12,13 +12,13 @@ FROM hypriot/rpi-python:2.7
 MAINTAINER Dieter Reuter <dieter@hypriot.com>
 
 # Install dependencies
-#RUN apt-get update && apt-get install -y \
-#    python \
-#    python-dev \
-#    python-pip \
-#    python-virtualenv \
-#    --no-install-recommends && \
-#    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    python \
+    python-dev \
+    python-pip \
+    python-virtualenv \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
 
 # Set the application directory
 WORKDIR /app
@@ -26,12 +26,9 @@ WORKDIR /app
 # Install our requirements.txt
 #ADD requirements.txt /app/requirements.txt
 #RUN sudo apt-get install python-pip
-RUN sudo apt install python-pip -y
-RUN pip install redis
+
+RUN sudo pip install redis
 RUN sudo pip install flask
-RUN sudo pip install flask-socketio
-
-
 
 #RUN pip install -r requirements.txt
 
