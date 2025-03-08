@@ -35,12 +35,12 @@ ADD /azure-vote /app
 
 # Copy our code from the current folder to /app inside the container
 #ADD . /app
-ADD /azure-vote /app
+#ADD /azure-vote /app
 
 # Make port 5000 available for links and/or publish
-EXPOSE 80 
+#EXPOSE 80 
 
 # Define our command to be run when launching the container
 #CMD ["python", "app.py"]
-CMD ["python", "/app/azure-vote/main.py"]
+#CMD ["python", "/app/azure-vote/main.py"]
 
