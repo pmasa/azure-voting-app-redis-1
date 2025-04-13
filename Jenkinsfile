@@ -9,10 +9,6 @@ pipeline {
     GIT_TOKEN = credentials('GithubToken')
   }
   agent any
-  tools {
-    docker 'latest'
-    jdk 'Java17'
-  }
   stages {
     stage('Cloning Git') {
       steps {
