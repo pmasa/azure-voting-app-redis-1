@@ -10,8 +10,8 @@ pipeline {
   }
   agent any
   tools {
-      docker 'latest'
-      jdk 'Java17'
+    docker 'latest'
+    jdk 'Java17'
   }
   stages {
     stage('Cloning Git') {
