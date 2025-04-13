@@ -11,7 +11,7 @@ pipeline {
   agent any
   tools {
       docker 'latest'
-      //jdk 'your_jdk_version'
+      jdk 'jdk-1.8.101'
   }
   stages {
     stage('Cloning Git') {
