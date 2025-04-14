@@ -56,6 +56,7 @@ pipeline {
                cat deployment.yaml
                //sed -i "s+pedromasa/azure-vote-front.*+pedromasa/azure-vote-front:${BUILD_NUMBER}+g" deployment.yaml
                sed -i "s+pedromasa/webapp.*+pedromasa/webapp:${BUILD_NUMBER}+g" deployment.yaml 
+               
                cat deployment.yaml
                
                git add .
