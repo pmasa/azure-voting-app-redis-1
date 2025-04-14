@@ -21,10 +21,10 @@ pipeline {
 
           sh '''
           cd azure-vote
-          docker build -t $registry:$BUILD_NUMBER .
+         
           '''
           echo "Image build complete"
-          //dockerImage = docker.build ./azure-vote registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
           
         }
       }
