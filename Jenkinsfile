@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "pedromasa/azure-vote-front"
+    registry = "pedromasa/azure-voting-front"
     registryCredential = 'dockerhub'
     dockerImage = ''
     GIT_REPO_NAME = "voting-app-redis-demo"
