@@ -18,13 +18,13 @@ pipeline {
     stage('Building Docker image ') {
       steps{
         script {
-
           sh '''
           cd azure-vote
-         
+          docker build -t $registry:$BUILD_NUMBER .
           '''
           echo "Image build complete"
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          //dockerImage = docker.build ./azure-vote registry + ":$BUILD_NUMBER"
+
           
         }
       }
@@ -34,9 +34,9 @@ pipeline {
       steps{
         script {
           docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
+            //dockerImage.push()
             //dockerImage.push('latest')
-            // sh "docker push $registry:$BUILD_NUMBER"
+             sh "docker push $registry:$BUILD_NUMBER"
              echo "Image push complete"
           }
         }
@@ -56,7 +56,7 @@ pipeline {
     
                cat deployment.yaml
                
-               sed -i "s+pedromasa/azure-vote-front.*+pedromasa/azure-vote-front:${BUILD_NUMBER}+g" deployment.yaml 
+               sed -i "s+$registry.*+$registry:${BUILD_NUMBER}+g" deployment.yaml 
 
                cat deployment.yaml
                
